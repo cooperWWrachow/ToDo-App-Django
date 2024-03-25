@@ -1,0 +1,16 @@
+{% extends 'todo/main.html' %}
+
+{% block body %}
+    {% for task in tasks %}
+    <ul>
+        <li>
+            <a href="{% url 'todo:detail' task.pk %}">{{ task.title }}</a>
+            <form method="POST" action="{% url 'todo:delete-task' task.pk %}" style="display: inline;">
+                {% csrf_token %}
+                <input type="submit" value="Delete">
+            </form>
+        </li>
+    </ul>
+    {% endfor %}
+    <a href="{% url 'todo:create-task' %}">Add</a>
+{% endblock %}

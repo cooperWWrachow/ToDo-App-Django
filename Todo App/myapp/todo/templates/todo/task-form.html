@@ -1,0 +1,11 @@
+
+{% extends 'todo/main.html' %}
+
+{% block body %}
+    <h3>Add Item</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
