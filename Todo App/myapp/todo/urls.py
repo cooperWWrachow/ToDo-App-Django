@@ -1,6 +1,6 @@
 from django.urls import path 
 from django.contrib.auth import views as auth_views 
-from .views import task, detail, create_task, update_task, delete_task, register
+from .views import task, detail, create_task, update_task, delete_task, RegisterPage
 
 app_name = 'todo'
 urlpatterns = [
@@ -13,7 +13,7 @@ urlpatterns = [
     #delete
     path('task/<int:pk>/delete', delete_task, name='delete-task'),
     # register
-    path('register/', register, name="register"),
+    path('register/', RegisterPage.as_view(), name="register"),
     #login
     path('login/', auth_views.LoginView.as_view(template_name='todo/login.html'), name='login'),
     #logout

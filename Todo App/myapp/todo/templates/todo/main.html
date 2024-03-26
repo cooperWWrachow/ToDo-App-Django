@@ -11,29 +11,31 @@
 </head>
 <body>
 
-    <div class="navbar">
-        <a href="{% url 'todo:task' %}">ToDo</a>
-    </div>
-
-    {% if user.is_authenticated %}
-    <div>
-        <a href="{% url 'todo:logout' %}">Logout</a>
-    </div>
-    {% endif %}
-
-    {% if messages %}
-        {% for message in messages %}
-        <div>
-            {{ message }}
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo">
+                <a href="{% url 'todo:task' %}">
+                    <img src="{% static 'todo/logo.png' %}">
+                </a>
+            </div>
+            <div class="welcome">
+                <h2>Your tasks are below {{ user.username }}!</h2>
+            </div>
+            
+            <div class="logout">
+                {% if user.is_authenticated %}
+                <a href="{% url 'todo:logout' %}">Logout</a>
+                {% endif %}
+            </div>
         </div>
-        {% endfor %}
-    {% endif %}
+    </nav>
 
     <div class="container">
         {% block body %}
         
         {% endblock %}
     </div>
+
 
 </body>
 </html>

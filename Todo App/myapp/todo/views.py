@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from .models import Task
 from .forms import TaskForm, RegisterForm
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import FormView
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
 # Create your views here.
 
@@ -75,21 +78,18 @@ def delete_task(request, pk):
     
     return render(request, 'todo/item-delete.html', context)
 
+class RegisterPage(FormView):
+    template_name = 'todo/register.html'
+    form_class = RegisterForm
+    success_url = reverse_lazy('todo:task')
 
-def register(request):
-    if request.method =='POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Welcome {username}, your account is created!')
-            return redirect('todo:login')
-    else:
-        form = RegisterForm()
+    def form_valid(self, form):
+        user = form.save()
+        if user is not None:
+            login(self.request, user)
+        return super(RegisterPage, self).form_valid(form)
 
-    context = {
-        'form':form
-    }
-    return render(request, 'todo/register.html', context)
+
+
 
 
