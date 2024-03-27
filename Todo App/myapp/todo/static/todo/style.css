@@ -50,9 +50,92 @@ body {
     font-weight: 600;
     font-size: 30px;
     border-bottom: 2px solid transparent; 
-    /* padding-right: 30px; */
+    padding-right: 38px;
 }
 
 .logout a:hover{
-    border-bottom-color: #2ecc71; 
+    color: #34495e; 
 }
+
+.box{
+    width: 400px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid #2ecc71;
+    background: #191919;
+    text-align: center;
+}
+
+.box h3{
+    color: #fff;
+    font-weight: 300px;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* All tasks on home screen  */
+
+.count h1{
+    padding:1px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.task-list {
+    padding: 10px;
+}
+
+ .due-today a{
+    color:#2ecc71;
+    font-weight: 200;
+    font-size: 25px;
+}
+
+.due-today a:hover{
+    color: #34495e; 
+}
+
+.not-due-today a{
+    color: white;
+    font-weight: 200;
+    font-size: 25px;
+}
+
+.not-due-today a:hover{
+    color: #34495e; 
+}
+
+.add input[type="submit"]{
+    border:0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.add input[type = "submit"]:hover{
+    background: #2ecc71;
+  }
+
+
+
+
+  /* Details */
+
+
+
+  /* Tasks Forms */

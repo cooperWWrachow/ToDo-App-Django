@@ -1,16 +1,47 @@
 {% extends 'todo/main.html' %}
 
+
 {% block body %}
-    {% for task in tasks %}
-    <ul>
-        <li>
+
+    {% if today_tasks.count == 1 %}
+    <div class="count">
+        <h1>Task Due Today: {{ today_tasks.count }}</h1>
+    </div>
+    {% else %}
+    <div class="count">
+        <h1>Tasks Due Today: {{ today_tasks.count }}</h1>
+    </div>
+    {% endif %}
+
+
+    {% for task in tasks|slice:":5" %}
+    <div class="task-list">
+        {% if task.due_date == today %}
+        <div class="due-today">
             <a href="{% url 'todo:detail' task.pk %}">{{ task.title }}</a>
             <form method="POST" action="{% url 'todo:delete-task' task.pk %}" style="display: inline;">
                 {% csrf_token %}
-                <input type="submit" value="Delete">
+                <input type="submit" value="X">
             </form>
-        </li>
-    </ul>
+        </div>
+        {% else %}
+        <div class="not-due-today">
+            <a href="{% url 'todo:detail' task.pk %}">{{ task.title }}</a>
+            <form method="POST" action="{% url 'todo:delete-task' task.pk %}" style="display: inline;">
+                {% csrf_token %}
+                <input type="submit" value="X">
+            </form>
+        </div>
+        {% endif %}
+    </div>
     {% endfor %}
-    <a href="{% url 'todo:create-task' %}">Add</a>
+
+    <div class="add">
+        <form method="POST" action="{% url 'todo:create-task' %}">
+            {% csrf_token %}
+            <input type="submit" value="Add">
+        </form>
+        <!-- <a href="{% url 'todo:create-task' %}"></a> -->
+    </div>
+
 {% endblock %}

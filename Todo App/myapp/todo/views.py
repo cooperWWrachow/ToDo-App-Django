@@ -1,11 +1,12 @@
+from datetime import date
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from .models import Task
 from .forms import TaskForm, RegisterForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import FormView
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.utils import timezone
 
 # Create your views here.
 
@@ -13,11 +14,15 @@ from django.contrib.auth import login
 def task(request):
     if request.user.is_authenticated: 
         tasks = Task.objects.filter(username=request.user)
+        today_tasks = Task.objects.filter(due_date=timezone.now())
+        today = date.today()
     else:
         tasks = Task.objects.none()
 
     context = {
-        'tasks':tasks
+        'tasks':tasks,
+        'today_tasks':today_tasks,
+        'today':today
     }
     return render(request, 'todo/task_list.html', context)
 
