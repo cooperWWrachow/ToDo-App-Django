@@ -2,10 +2,33 @@
 {% extends 'todo/main.html' %}
 
 {% block body %}
-    <h3>Add Item</h3>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
+    <div class="task-form">
+        <form method="POST">
+            <h1>Add Task</h1>
+            {% csrf_token %}
+
+            <div class="form">
+                <label type="text" for="title">Task Name</label>
+            </div>
+            <div class="boxes1">
+                {{ form.title }}
+            </div>
+
+            <div class="form">
+                <label type="text" for="description">Description</label>
+            </div>
+            <div class="boxes">
+                {{ form.desc }}
+            </div>
+
+            <div class="form">
+                <label type="text" for="date">Due Date (Ex: M/D/Y)</label>
+            </div>
+            <div class="boxes2">
+                {{ form.due_date }}
+            </div>
+            
+            <button type="submit">Save</button>
+        </form>
+    </div>
 {% endblock %}

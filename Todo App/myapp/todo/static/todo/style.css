@@ -70,6 +70,7 @@ body {
     border: 3px solid #2ecc71;
     background: #191919;
     text-align: center;
+    word-wrap: break-word; /* Allow long words to wrap */
 }
 
 .box h3{
@@ -112,10 +113,17 @@ body {
     color: #34495e; 
 }
 
+.delete-button{
+    background-color:#191919;
+    color: red;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .add input[type="submit"]{
     border:0;
     background: none;
-    display: block;
     margin: 20px auto;
     text-align: center;
     border: 2px solid #2ecc71;
@@ -131,11 +139,112 @@ body {
     background: #2ecc71;
   }
 
-
-
-
   /* Details */
+.row h1{
+    padding:1px;
+    color: #2ecc71;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 40px;
+}
 
+.row h2{
+    padding:1px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
 
+.row button{
+    border:0;
+    background: none;
+    display: inline-block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.row button:hover{
+    background: #2ecc71;
+}
 
   /* Tasks Forms */
+.task-form h1{
+    color: #2ecc71;
+}
+
+.form label{
+    font-weight: bold;
+    color: #fff;
+    margin-top: 5px;
+    text-align: right;
+    font-size: 20px;
+}
+
+.boxes{
+    border-radius: 4px;
+    font-size: 30px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.boxes1{
+    border-radius: 4px;
+    font-size: 30px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.boxes2{
+    border-radius: 4px;
+    font-size: 30px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.boxes1 input[type="text"] {
+    width: 250px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.boxes textarea {
+    resize: none;
+    height: 100px;
+    width: 300px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.boxes2 input[type="text"] {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.task-form button{
+    border:0;
+    background: none;
+    display: inline-block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.task-form button:hover{
+    background: #2ecc71;
+}
