@@ -25,9 +25,9 @@ body {
 }
 
 .logo a img{
-    width: 100px;
-    height: 100px;
-    padding: 15px;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
 }
 
 .welcome{
@@ -40,7 +40,7 @@ body {
     color: #2ecc71;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 25px;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -48,7 +48,7 @@ body {
 .logout a{
     color: #2ecc71;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 25px;
     border-bottom: 2px solid transparent; 
     padding-right: 38px;
 }
@@ -65,7 +65,7 @@ body {
     padding-bottom: 20px;
     position: absolute;
     top: 55%;
-    left: 50%;
+    left: 49.8%;
     transform: translate(-50%,-50%);
     border: 3px solid #2ecc71;
     background: #191919;
