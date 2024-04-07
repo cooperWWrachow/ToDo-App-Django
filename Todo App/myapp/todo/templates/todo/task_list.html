@@ -3,13 +3,13 @@
 
 {% block body %}
 
-    {% if today_tasks.count == 1 %}
+    {% if today_tasks == 1 %}
     <div class="count">
-        <h1>Task Due Today: {{ today_tasks.count }}</h1>
+        <h1>Task Due Today: {{ today_tasks }}</h1>
     </div>
     {% else %}
     <div class="count">
-        <h1>Tasks Due Today: {{ today_tasks.count }}</h1>
+        <h1>Tasks Due Today: {{ today_tasks }}</h1>
     </div>
     {% endif %}
 

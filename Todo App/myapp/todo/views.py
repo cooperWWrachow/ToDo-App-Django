@@ -6,23 +6,22 @@ from .forms import TaskForm, RegisterForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import FormView
 from django.contrib.auth import login
-from django.utils import timezone
-
+from django.contrib import messages
 # Create your views here.
 
 @login_required
 def task(request):
     if request.user.is_authenticated: 
         tasks = Task.objects.filter(username=request.user)
-        today_tasks = Task.objects.filter(due_date=timezone.now())
+        today_tasks = tasks.filter(due_date=date.today())
         today = date.today()
     else:
         tasks = Task.objects.none()
 
     context = {
         'tasks':tasks,
-        'today_tasks':today_tasks,
-        'today':today
+        'today_tasks':today_tasks.count(),
+        'today':today,
     }
     return render(request, 'todo/task_list.html', context)
 
