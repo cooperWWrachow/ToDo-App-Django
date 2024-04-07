@@ -5,4 +5,4 @@ that demonstrate its functionality!
 
 First, I wanted to show its login/logout/user registration functionality. While, I am the only person using the app, I still wanted to develop an appealing login and user registration page.
 
-![registration-ezgif com-video-to-gif-converter](https://github.com/cooperWWrachow/ToDo-App-Django/assets/135729317/7e650355-a1ee-4bf6-8774-6fc8d9cdafa3)
+![image](https://github.com/cooperWWrachow/ToDo-App-Django/assets/135729317/56a9aab6-fc94-451b-944b-c108243e41ce)
