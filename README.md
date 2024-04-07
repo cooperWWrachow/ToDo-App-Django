@@ -5,4 +5,5 @@ that demonstrate its functionality!
 
 First, I wanted to show its login/logout/user registration functionality. While, I am the only person using the app, I still wanted to develop an appealing login and user registration page.
 
-![image](https://github.com/cooperWWrachow/ToDo-App-Django/assets/135729317/56a9aab6-fc94-451b-944b-c108243e41ce)
+
+![registration-ezgif com-speed](https://github.com/cooperWWrachow/ToDo-App-Django/assets/135729317/ced9b1ef-870e-42cd-ae95-b641aa4935d7)
